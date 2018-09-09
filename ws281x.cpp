@@ -12,7 +12,9 @@ namespace ws281x
 {
 	void TSPIDriver::SendData(const void* buffer, const size_t n_bytes)
 	{
-		struct spi_ioc_transfer xfer_cmd = {};
+		struct spi_ioc_transfer xfer_cmd;
+		memset(&xfer_cmd, 0, sizeof(xfer_cmd));
+
 		xfer_cmd.tx_buf = (size_t)buffer;
 		xfer_cmd.len = n_bytes;
 		xfer_cmd.delay_usecs = 0;
