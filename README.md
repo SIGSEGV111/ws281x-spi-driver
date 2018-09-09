@@ -13,3 +13,5 @@ Have a look here "https://easyeda.com/Neegu0Sh/neopixel-level-shifter" for how t
 
 ## Credits
 This library was heavily inspired by Jeremy Garff (jgarff) library "rpi_ws281x". Have a look here "https://github.com/jgarff/rpi_ws281x". All creadits go to him for the idea to drive LEDs via PWM/SPI/etc.
+
+![alt text](https://raw.githubusercontent.com/SIGSEGV111/ws281x-spi-driver/master/led-ring-example.jpg "LED Ring")
