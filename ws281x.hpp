@@ -1,9 +1,14 @@
 #pragma once
 
+#include <stdint.h>
+#include <unistd.h>
+#include <string.h>
+
 namespace ws281x
 {
 	// TNeoPixel is the main class that does all the "magic"
 	// it converts all RGB color information into a bit pattern which when sent over the SPI bus will be understood by the LEDs
+	// use one of its specializations below "TWS2812B" or "TWS2811"
 
 	// in order to use it connect SPI-MOSI pin to the input pin of your first LED
 	// SPI-SCLK and SPI-MISO are not used and should not be connected
@@ -68,6 +73,23 @@ namespace ws281x
 		TBar(TWS2812B* arr_pixels, unsigned offset, unsigned n_pixels) : arr_pixels(arr_pixels+offset), n_pixels(n_pixels) {}
 	};
 
+	// this is a pretty simple wrapper driver for the SPI bus
+	// all it does it handle the open/close and data transfer calls to the kernel
+	class TSPIDriver
+	{
+		private:
+			TSPIDriver(const TSPIDriver&);
+
+		protected:
+			long long hz_speed;
+			int fd;
+
+		public:
+			void SendData(const void* buffer, const size_t n_bytes);
+
+			TSPIDriver(const char* const spidev, const long long hz_speed);
+			~TSPIDriver();
+	};
 
 	// #####################################################################################
 	// #####################################################################################

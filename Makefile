@@ -2,9 +2,8 @@
 
 all: example
 
-example: ws281x.cpp Makefile
-	g++ ws281x.cpp -o example -O3 -Os -fwhole-program -flto
-	strip example
+example: ws281x.cpp example.cpp Makefile
+	g++ ws281x.cpp example.cpp -o example -O3 -flto -g
 
 clean:
 	rm -vf example
