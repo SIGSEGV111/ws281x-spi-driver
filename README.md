@@ -12,6 +12,6 @@ A level-shifter also has the advantage that you can drive the 5V LEDs from e.g. 
 Have a look here "https://easyeda.com/Neegu0Sh/neopixel-level-shifter" for how to wire everything up.
 
 ## Credits
-This library was heavily inspired by Jeremy Garff (jgarff) library "rpi_ws281x". Have a look here "https://github.com/jgarff/rpi_ws281x". All creadits go to him for the idea to drive LEDs via PWM/SPI/etc.
+This library was heavily inspired by Jeremy Garff (jgarff) library "rpi_ws281x". Have a look here "https://github.com/jgarff/rpi_ws281x". All credits go to him for the idea to drive LEDs via PWM/SPI/etc.
 
 ![alt text](https://raw.githubusercontent.com/SIGSEGV111/ws281x-spi-driver/master/led-ring-example.jpg "LED Ring")
