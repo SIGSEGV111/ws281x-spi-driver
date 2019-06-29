@@ -1,15 +1,18 @@
 .PHONY: all clean run check
 
-all: example
+all: simple firefly-ring random-ring off
 
-check:  ws281x.cpp example.cpp Makefile
-	g++ ws281x.cpp example.cpp -o example -O3 -flto -g -Wall -Wextra -Werror
+off: ws281x.cpp off.cpp
+	g++ -O3 -flto -fwhole-program -g ws281x.cpp off.cpp -o off
 
-example: ws281x.cpp example.cpp Makefile
-	g++ ws281x.cpp example.cpp -o example -O3 -flto -g
+simple: ws281x.cpp simple.cpp
+	g++ -O3 -flto -fwhole-program -g ws281x.cpp simple.cpp -o simple
 
-run: example
-	./example
+firefly-ring: ws281x.cpp firefly-ring.cpp
+	g++ -O3 -flto -fwhole-program -g ws281x.cpp firefly-ring.cpp -o firefly-ring
+
+random-ring: ws281x.cpp random-ring.cpp
+	g++ -O3 -flto -fwhole-program -g ws281x.cpp random-ring.cpp -o random-ring
 
 clean:
-	rm -vf example
+	rm -vf simple firefly-ring random-ring

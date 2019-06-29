@@ -31,4 +31,7 @@
 *.out
 *.app
 
-example
+firefly-ring
+random-ring
+simple
+off
