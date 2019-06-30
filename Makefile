@@ -1,18 +1,24 @@
 .PHONY: all clean run check
 
-all: simple firefly-ring random-ring off
+all: simple firefly-ring random-ring off temp color
 
 off: ws281x.cpp off.cpp
-	g++ -O3 -flto -fwhole-program -Wall -Wextra -g ws281x.cpp off.cpp -o off
+	g++ -O3 -flto -fwhole-program -Wall -Wextra -Wno-unused-function -g ws281x.cpp off.cpp -o off
 
 simple: ws281x.cpp simple.cpp
-	g++ -O3 -flto -fwhole-program -Wall -Wextra -g ws281x.cpp simple.cpp -o simple
+	g++ -O3 -flto -fwhole-program -Wall -Wextra -Wno-unused-function -g ws281x.cpp simple.cpp -o simple
 
-firefly-ring: ws281x.cpp firefly-ring.cpp
-	g++ -O3 -flto -fwhole-program -Wall -Wextra -g ws281x.cpp firefly-ring.cpp -o firefly-ring
+temp: ws281x.cpp temp.cpp util.hpp
+	g++ -O3 -flto -fwhole-program -Wall -Wextra -Wno-unused-function -g ws281x.cpp temp.cpp -o temp
 
-random-ring: ws281x.cpp random-ring.cpp
-	g++ -O3 -flto -fwhole-program -Wall -Wextra -g ws281x.cpp random-ring.cpp -o random-ring
+color: ws281x.cpp color.cpp
+	g++ -O3 -flto -fwhole-program -Wall -Wextra -Wno-unused-function -g ws281x.cpp color.cpp -o color
+
+firefly-ring: ws281x.cpp firefly-ring.cpp util.hpp
+	g++ -O3 -flto -fwhole-program -Wall -Wextra -Wno-unused-function -g ws281x.cpp firefly-ring.cpp -o firefly-ring
+
+random-ring: ws281x.cpp random-ring.cpp util.hpp
+	g++ -O3 -flto -fwhole-program -Wall -Wextra -Wno-unused-function -g ws281x.cpp random-ring.cpp -o random-ring
 
 clean:
-	rm -vf simple firefly-ring random-ring off
+	rm -vf simple firefly-ring random-ring off temp

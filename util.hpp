@@ -24,4 +24,26 @@ namespace ws281x
 				i = 0;
 		}
 	}
+
+	static void GenerateBarGraph(TWS2812B* arr_pixels, const unsigned n_pixels, const bool reverse, const float value, const char red, const char green, const char blue)
+	{
+		const unsigned n_on = lrint((float)n_pixels * value);
+
+		for(unsigned i = 0; i < n_pixels; i++)
+		{
+			TWS2812B& pixel = arr_pixels[(reverse ? (n_pixels - i - 1) : i)];
+
+			if(i < n_on)
+				pixel.RGB(red,green,blue);
+			else
+				pixel.RGB(0,0,0);
+		}
+	}
+
+	static float Limit01(const float v)
+	{
+		if(v < 0) return 0;
+		if(v > 1) return 1;
+		return v;
+	}
 }
