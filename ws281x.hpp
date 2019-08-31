@@ -25,6 +25,8 @@ namespace ws281x
 	// then make sure the cabeling between your host and the first LED is a short as possible
 	// if you still cannot make it work, try lowering the voltage of the LEDs to 3.3V - this will reduce brightness, but usually fixes the signaling issues
 
+	static unsigned long HZ_SPI_NEOPIXEL = 2500000;	// this yields 400ns bit-times on the bus
+
 	template<unsigned idx_red, unsigned idx_green, unsigned idx_blue>
 	struct TNeoPixel
 	{

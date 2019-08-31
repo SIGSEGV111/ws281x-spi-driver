@@ -6,8 +6,7 @@ int main()
 	// a small example
 
 	// attach an instance of the SPI-driver to the first SPI device on the first bus (0.0)
-	// set the transfer speed to 800000*4 Hz (required to drive NeoPixels)
-	TSPIDriver spi_dev_1("/dev/spidev0.0", 800000*4);
+	TSPIDriver spi_dev_1("/dev/spidev0.0", HZ_SPI_NEOPIXEL);
 
 	// our LED strip or ring will have 60 LEDs
 	const unsigned n_pixels = 60;

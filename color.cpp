@@ -16,8 +16,7 @@ int main(int argc, char* argv[])
 	}
 
 	// attach an instance of the SPI-driver to the first SPI device on the first bus (0.0)
-	// set the transfer speed to 800000*4 Hz (required to drive NeoPixels)
-	TSPIDriver spi_dev_1("/dev/spidev0.0", 800000*4);
+	TSPIDriver spi_dev_1("/dev/spidev0.0", HZ_SPI_NEOPIXEL);
 
 	const unsigned n_pixels = 60;
 	TWS2812B arr_pixels[n_pixels];

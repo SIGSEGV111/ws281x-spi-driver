@@ -10,8 +10,8 @@ namespace ws281x
 	static void RunRing(const TWS2812B* const arr, const unsigned n_pixels, const unsigned delay)
 	{
 		// attach an instance of the SPI-driver to the first SPI device on the first bus (0.0)
-		// set the transfer speed to 800000*4 Hz (required to drive NeoPixels)
-		TSPIDriver spi_dev_1("/dev/spidev0.0", 800000*4);
+		// set the transfer speed to 2500000 Hz (required to drive NeoPixels)
+		TSPIDriver spi_dev_1("/dev/spidev0.0", HZ_SPI_NEOPIXEL);
 
 		unsigned i = 0;
 		for(;;)

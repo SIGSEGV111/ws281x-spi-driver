@@ -1,7 +1,7 @@
 # ws281x-spi-driver
-A small, efficient and **very** easy-to-use C++ library to drive ws281x LEDs (aka "NeoPixels") via the SPI bus.  
+A small, efficient and **very** easy-to-use C++ library to drive ws281x LEDs (aka "NeoPixels") via the SPI bus.
 It has practically no dependencies besides a proper a linux computer with an SPI bus (e.g. the Raspberry Pi - any version).
-All you have to do is to clone it and hit "make" and you will have a number of example on your hands which should work out of the box.
+All you have to do is to clone it and hit "make" and you will have a number of examples on your hands which should work out of the box.
 
 ## Simple Cabling
 Basically you just have to connect the SPI-MOSI pin of your host to the input pin of your first LED.

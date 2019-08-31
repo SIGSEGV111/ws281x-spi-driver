@@ -36,9 +36,9 @@ int main()
 	TWS2812B arr_pixels[n_pixels * 2];
 
 	// generate the RGB data for the three fireflies
-	MakeFirefly(arr_pixels + n_pixels * 0/3, n_pixels / 6, 32, 0, 0);
-	MakeFirefly(arr_pixels + n_pixels * 1/3, n_pixels / 6, 0, 32, 0);
-	MakeFirefly(arr_pixels + n_pixels * 2/3, n_pixels / 6, 0, 0, 32);
+	MakeFirefly(arr_pixels + n_pixels * 0/3, n_pixels / 6, 10, 0, 0);
+	MakeFirefly(arr_pixels + n_pixels * 1/3, n_pixels / 6, 0, 10, 0);
+	MakeFirefly(arr_pixels + n_pixels * 2/3, n_pixels / 6, 0, 0, 10);
 
 	// duplicate first half of the ring-buffer into the second half (required for RunRing() to work)
 	memcpy(arr_pixels + n_pixels, arr_pixels, n_pixels * sizeof(TWS2812B));
