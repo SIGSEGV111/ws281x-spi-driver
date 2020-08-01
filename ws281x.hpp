@@ -22,7 +22,7 @@ namespace ws281x
 	// have a look here "https://easyeda.com/Neegu0Sh/neopixel-level-shifter" for how to wire everything up
 
 	// if you do NOT use a level-shifter and your host uses 3.3V to drive the SPI bus (like the Raspberry Pi)
-	// then make sure the cabeling between your host and the first LED is a short as possible
+	// then make sure the cabeling between your host and the first LED is as short as possible
 	// if you still cannot make it work, try lowering the voltage of the LEDs to 3.3V - this will reduce brightness, but usually fixes the signaling issues
 
 	static unsigned long HZ_SPI_NEOPIXEL = 2500000;	// this yields 400ns bit-times on the bus
@@ -76,7 +76,7 @@ namespace ws281x
 	};
 
 	// this is a pretty simple wrapper driver for the SPI bus
-	// all it does it handle the open/close and data transfer calls to the kernel
+	// all it does is handle the open/close and data transfer calls to the kernel
 	class TSPIDriver
 	{
 		private:
