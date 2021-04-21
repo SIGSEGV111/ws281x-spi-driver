@@ -18,6 +18,10 @@ If you want to use the LED strip as full-fledged SPI device and continue to use 
 A level-shifter also has the advantage that you can drive the 5V LEDs from e.g. a 3.3V host like the Raspberry *more reliably*
 Have a look here "https://easyeda.com/Neegu0Sh/neopixel-level-shifter" for how to wire everything up.
 
+## Level-Shifter notes
+The LEDs run at 2500 KHz, make sure your level-shifter can support that speed.
+Bi-directional level-shifters (usually for i2c) will most likely *NOT* work.
+
 ## Credits
 This library was heavily inspired by Jeremy Garff's (jgarff) library "rpi_ws281x". Have a look here "https://github.com/jgarff/rpi_ws281x". All credits go to him for the idea to drive LEDs via PWM/SPI/etc.
 
