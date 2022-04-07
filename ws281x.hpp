@@ -42,7 +42,6 @@ namespace ws281x
 		} __attribute__((packed));
 
 		TColor color[3];
-		uint8_t latch_delay[2];
 
 		TColor& Red();
 		TColor& Green();
@@ -104,7 +103,6 @@ namespace ws281x
 		this->Red() = red;
 		this->Green() = green;
 		this->Blue() = blue;
-		memset(this->latch_delay, 0x00, sizeof(this->latch_delay));
 	}
 
 	template<unsigned idx_red, unsigned idx_green, unsigned idx_blue>
